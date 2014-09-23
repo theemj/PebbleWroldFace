@@ -1,0 +1,40 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "ejohnsischeme@gmail.com",
+    "longName": "xkcdWorldTime",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/MidNiteMap.png",
+                "name": "START_MAP",
+                "type": "png"
+            },
+            {
+                "file": "images/hi.png",
+                "name": "HI",
+                "type": "png"
+            },
+            {
+                "file": "images/map.png",
+                "name": "DA_MAP",
+                "type": "png"
+            },
+            {
+                "file": "images/xkcdLittleWorld.png",
+                "name": "XKCD_WORLD",
+                "type": "png"
+            }
+        ]
+    },
+    "shortName": "xkcdWorldTime",
+    "uuid": "007e02da-51ca-4604-adb8-ab23f6deffd3",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
