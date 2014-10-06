@@ -24,8 +24,8 @@ static void update_time() {
   text_layer_set_text(s_time_layer, buffer);
   
   
-  int sinceMid = gmtTime->tm_hour;
-  int wedge_size = TRIG_MAX_ANGLE/24;
+  int sinceMid = gmtTime->tm_hour*4+gmtTime->tm_min/15;
+  int wedge_size = TRIG_MAX_ANGLE/96;
   if (prevSinceMid != sinceMid) {
         rot_bitmap_layer_set_angle(image_layer, wedge_size*sinceMid);
         prevSinceMid = sinceMid;
