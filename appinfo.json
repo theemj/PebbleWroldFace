@@ -9,23 +9,13 @@
     "resources": {
         "media": [
             {
+                "file": "images/GMT12AM.png",
+                "name": "GMT_12AM",
+                "type": "png"
+            },
+            {
                 "file": "images/MidNiteMap.png",
                 "name": "START_MAP",
-                "type": "png"
-            },
-            {
-                "file": "images/hi.png",
-                "name": "HI",
-                "type": "png"
-            },
-            {
-                "file": "images/map.png",
-                "name": "DA_MAP",
-                "type": "png"
-            },
-            {
-                "file": "images/xkcdLittleWorld.png",
-                "name": "XKCD_WORLD",
                 "type": "png"
             }
         ]

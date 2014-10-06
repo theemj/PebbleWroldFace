@@ -10,6 +10,7 @@ int prevSinceMid = -1;
 static void update_time() {
   time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
+  struct tm *gmtTime = gmtime(&temp); //gmtTime does not appear to work quite yet, see map image placement below
   
   static char buffer[] = "00:00";
   
@@ -22,7 +23,8 @@ static void update_time() {
   
   text_layer_set_text(s_time_layer, buffer);
   
-  int sinceMid = tick_time->tm_hour;
+  
+  int sinceMid = gmtTime->tm_hour;
   int wedge_size = TRIG_MAX_ANGLE/24;
   if (prevSinceMid != sinceMid) {
         rot_bitmap_layer_set_angle(image_layer, wedge_size*sinceMid);
@@ -44,13 +46,13 @@ void handle_init(void) {
   text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
-  image = gbitmap_create_with_resource(RESOURCE_ID_START_MAP);
+  image = gbitmap_create_with_resource(RESOURCE_ID_START_MAP); //when gmtTime does work, use GMT_12AM instead of START_MAP
   image_layer = rot_bitmap_layer_create(image);
   //GRect starts at -60 because rot_layer offsets it this much, rotating the square pic. 204 is the diameter of the circle rot_layer spins the image in.
   layer_set_frame((Layer *)image_layer, GRect(-30, 24-30+1, 204, 204)); 
-  //bitmap_layer_set_bitmap(image_layer, image);
+
   
-  //bitmap_layer_set_alignment(image_layer, GAlignCenter);
+
   layer_add_child(window_get_root_layer(my_window),  (Layer *)image_layer);
   
   
